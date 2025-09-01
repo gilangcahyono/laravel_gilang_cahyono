@@ -10,10 +10,10 @@ class Hospital extends Model
     /** @use HasFactory<\Database\Factories\HospitalFactory> */
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'address',
-        'email',
-        'phone'
-    ];
+    protected $guarded = ['id'];
+
+    public function patients()
+    {
+        return $this->hasMany(Patient::class);
+    }
 }

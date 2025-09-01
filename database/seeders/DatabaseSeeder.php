@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Hospital;
+use App\Models\Patient;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,9 +18,9 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'username' => 'gilang',
-            'email' => '11111111',
+            'password' => Hash::make('11111111'),
         ]);
 
-        Hospital::factory(4)->create();
+        Hospital::factory(10)->has(Patient::factory(5))->create();
     }
 }

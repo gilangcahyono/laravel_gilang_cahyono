@@ -12,7 +12,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        $patients = Patient::with('hospital')->get();
+        return view('patients.index', compact('patients'));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,4 +16,7 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class, 'login']);
 Route::post('login', [LoginController::class, 'authenticate']);
 
-Route::resource('hospitals', HospitalController::class);
+// Route::middleware('auth')->group(function () {
+Route::resource('hospitals', HospitalController::class)->except('show');
+Route::resource('patients', PatientController::class);
+// });

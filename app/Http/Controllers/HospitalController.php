@@ -12,7 +12,8 @@ class HospitalController extends Controller
      */
     public function index()
     {
-        return "sdasa";
+        $hospitals = Hospital::all();
+        return view('hospitals.index', compact('hospitals'));
     }
 
     /**
@@ -20,7 +21,7 @@ class HospitalController extends Controller
      */
     public function create()
     {
-        //
+        return view('hospitals.create');
     }
 
     /**
@@ -28,15 +29,7 @@ class HospitalController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Hospital $hospital)
-    {
-        //
+        return $request->all();
     }
 
     /**
@@ -44,7 +37,7 @@ class HospitalController extends Controller
      */
     public function edit(Hospital $hospital)
     {
-        //
+        return view('hospitals.edit', compact('hospital'));
     }
 
     /**
