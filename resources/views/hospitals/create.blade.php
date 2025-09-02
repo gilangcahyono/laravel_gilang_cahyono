@@ -23,7 +23,6 @@
 
             <div class="mb-3">
                 <label for="telepon" class="form-label">Telepon</label>
-                <label for="telepon" class="form-label">Telepon</label>
                 <input type="tel" class="form-control" id="telepon" name="telepon" />
             </div>
 
@@ -38,4 +37,12 @@
             </div>
         </form>
     </div>
+    <script>
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
+    </script>
 @endsection
